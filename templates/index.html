@@ -31,7 +31,17 @@
                 <td>{{ i.marke }}</td>
                 <td>{{ i.modell }}</td>
                 <td>{{ i.preis}}</td>
-                <td><Button class="btn btn-danger">Verkaufen</Button> <button class="btn btn-secondary">Infos</button></td>
+                <td><a href="/verkaufen/{{ loop.index0 }}" class="btn btn-danger" >Verkaufen</a> <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle mt-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Info
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li>Lakierung: {{ i.lakierung }}</li>
+                    <li>Tüv bis: {{ i.naechster_tuev }}</li>
+                    <li>Schäden: {{ i.schaeden_liste }}</li>
+                    <li>Besitzer: {{ i.besitzer }}</li>
+                  </ul>
+                </div></td>
             </tr>
             {% endfor %}
           </table>
@@ -63,7 +73,7 @@
               <td>{{ i.modell }}</td>
               <td>{{ i.preis }}</td>
               <td>{{ i.besitzer }}</td>
-              <td><button class="btn btn-success">Kaufen</button></td>
+              <td><a href="/ankaufen/{{ loop.index0 }}" class="btn btn-success {% if autohaus.kontostand-i.preis >= 0%}{% else %}disabled{% endif%}">Kaufen</a></td>
           </tr>
           {% endfor %}
         </table>
