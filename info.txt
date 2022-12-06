@@ -1,0 +1,36 @@
+Klassen:
+    Auto()
+        args:
+            marke
+            modell
+            lakierung
+            id
+            tuev
+            naechster_tuev
+            schaeden_liste
+            preis
+            besitzer
+            autohaus
+        funcs:
+            umlakieren(farbe)
+            set_tuev()
+            add_schaden(schaden)
+
+    Tesla(Auto)
+        args:
+            marke="Tesla"
+            akku_tausch
+        funcs:
+            set_akku_tausch()
+
+    Autohaus()
+        args:
+            name
+            standort
+            kontostand
+            autos
+            verkaefer
+            ankaefer
+        funcs:
+            verkauf(auto_id)
+            ankauf(auto_id)
