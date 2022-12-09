@@ -6,7 +6,6 @@ Klassen:
             lakierung
             id
             tuev
-            naechster_tuev
             schaeden_liste
             preis
             besitzer
@@ -29,8 +28,8 @@ Klassen:
             standort
             kontostand
             autos
-            verkaefer
-            ankaefer
+            kunden
         funcs:
             verkauf(auto_id)
             ankauf(auto_id)
+            auto_umlakieren()
